@@ -2,21 +2,23 @@ package com.sandbox.config;
 
 import javax.sql.DataSource;
 
-import org.springframework.boot.autoconfigure.liquibase.DataSourceClosingSpringLiquibase;
-import org.springframework.boot.autoconfigure.liquibase.LiquibaseAutoConfiguration.LiquibaseConfiguration;
-import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
+import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import liquibase.integration.spring.SpringLiquibase;
 
 @Configuration
+@EnableTransactionManagement
+@EntityScan( basePackages = {"com.sandbox.model"} )
 public class DataSourceConfiguration {
 	/**
-	 * Console H2 disponible sur votre environnement local : 
+	 * Console H2 disponible sur votre environnement local :
 	 * http://localhost:8080/h2-console
+	 * 
 	 * @return
 	 */
 	@Bean(name = "sdm")
