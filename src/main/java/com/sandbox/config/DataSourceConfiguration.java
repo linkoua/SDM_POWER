@@ -1,4 +1,4 @@
-package com.sandbox;
+package com.sandbox.config;
 
 import javax.sql.DataSource;
 

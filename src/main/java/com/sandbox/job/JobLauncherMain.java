@@ -1,4 +1,4 @@
-package com.sandbox;
+package com.sandbox.job;
 
 import java.util.Date;
 import java.util.Objects;
